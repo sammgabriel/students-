@@ -34,6 +34,11 @@ $f3->route('GET /summary/@sid',
 
     $sid = $params['sid'];
 
+    $student = getStudent($sid);
+    $f3->set('student', $student);
+
+    //echo "first name: " . $student->getFirst();
+
     //load a template
     $template = new Template();
     echo $template->render('views/view-student.html');
