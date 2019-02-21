@@ -1,0 +1,9 @@
+<h1>Student List</h1>
+
+<ol>
+<repeat group="{{ @students }}" value="{{ @student }}">
+    <li><a href="{{ @BASE }}/summary/{{ @student['sid'] }}">{{ @student['last'] }}, {{ @student['first'] }}</a></li>
+</repeat>
+</ol>
+
+<a href="{{ @BASE }}/add">Add a Student</a>

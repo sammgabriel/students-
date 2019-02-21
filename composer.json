@@ -1,0 +1,15 @@
+{
+  "name": "sgabriel/328/students-",
+  "authors": [
+    {
+      "name": "Sam Gabriel",
+      "email": "sgabriel2@greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  },
+  "autoload": {
+    "classmap": ["classes/"]
+  }
+}
