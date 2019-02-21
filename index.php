@@ -58,9 +58,6 @@ $f3->route('GET /summary/@sid',
         $f3->set('isPassing', "Failing");
     }
 
-
-    //echo "first name: " . $student->getFirst();
-
     //load a template
     $template = new Template();
     echo $template->render('views/view-student.html');
@@ -100,7 +97,7 @@ $f3->route('GET|POST /add', function($f3) {
                 $gpa, $advisor);
             $_SESSION['student'] = $student;
 
-            $f3->reroute('/summary');
+            $f3->reroute('/summary/' . $sid);
         }
     }
 
