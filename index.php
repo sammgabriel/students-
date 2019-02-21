@@ -11,7 +11,7 @@ session_start();
 $f3 = Base::instance();
 
 //Debugging
-require_once '/home/tostrand/public_html/debug.php';
+//require_once '/home/tostrand/public_html/debug.php';
 
 //Connect to the database
 $dbh = connect();
@@ -28,7 +28,11 @@ $f3->route('GET /', function($f3) {
 });
 
 //Define a route to view a student summary
-$f3->route('GET /summary', function() {
+$f3->route('GET /summary/@sid',
+
+    function($f3, $params) {
+
+    $sid = $params['sid'];
 
     //load a template
     $template = new Template();
