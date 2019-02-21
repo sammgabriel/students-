@@ -30,7 +30,8 @@ $f3->route('GET /', function($f3) {
 //Define a route to view a student summary
 $f3->route('GET /summary/@sid',
 
-    function($f3, $params) {
+    function($f3, $params)
+    {
 
     // Define parameters
     $sid = $params['sid'];
@@ -42,6 +43,21 @@ $f3->route('GET /summary/@sid',
     $f3->set('student', $student);
     $f3->set('first', $student->getFirst());
     $f3->set('last', $student->getLast());
+    $f3->set('sid', $student->getSid());
+    $f3->set('birthdate', $student->getBirthdate());
+    $f3->set('gpa', $student->getGpa());
+
+    if ($student->getGpa() >= 2.0)
+    {
+
+        $f3->set('isPassing', "Passing");
+
+    } else
+    {
+
+        $f3->set('isPassing', "Failing");
+    }
+
 
     //echo "first name: " . $student->getFirst();
 
