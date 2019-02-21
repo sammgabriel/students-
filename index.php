@@ -32,10 +32,16 @@ $f3->route('GET /summary/@sid',
 
     function($f3, $params) {
 
+    // Define parameters
     $sid = $params['sid'];
 
+    // Create a student object
     $student = getStudent($sid);
+
+    // Set object variables
     $f3->set('student', $student);
+    $f3->set('first', $student->getFirst());
+    $f3->set('last', $student->getLast());
 
     //echo "first name: " . $student->getFirst();
 
